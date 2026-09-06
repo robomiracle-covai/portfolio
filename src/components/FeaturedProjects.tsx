@@ -32,7 +32,7 @@ export const FeaturedProjects: React.FC = () => {
         {/* Section Title */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[var(--border-subtle)]">
           <div>
-            <div className="text-xs font-mono uppercase tracking-wider text-[var(--accent)] mb-2 flex items-center gap-1.5">
+            <div className="text-xs font-mono uppercase tracking-wider text-[var(--accent)] mb-2 flex items-center gap-1.5 font-semibold">
               <Cpu size={14} />
               <span>Projects & Systems</span>
             </div>
@@ -44,14 +44,14 @@ export const FeaturedProjects: React.FC = () => {
         </div>
 
         {/* Projects List */}
-        <div className="space-y-8">
+        <div className="space-y-10">
           {FEATURED_PROJECTS.map((project) => {
             const isExpanded = expandedProjectId === project.id;
 
             return (
               <article
                 key={project.id}
-                className={`editorial-card relative transition-all duration-200 ${
+                className={`project-card ${
                   project.isPrimary
                     ? 'border-[var(--accent)]/40 ring-1 ring-[var(--accent)]/20'
                     : 'border-[var(--border-subtle)]'
@@ -59,16 +59,16 @@ export const FeaturedProjects: React.FC = () => {
               >
                 {/* Primary Tag */}
                 {project.isPrimary && (
-                  <div className="absolute -top-3 left-6 px-2.5 py-0.5 rounded text-[10px] font-mono font-semibold uppercase tracking-wider bg-[var(--accent)] text-white shadow-sm flex items-center gap-1">
+                  <div className="project-primary-tag">
                     <Sparkles size={11} />
                     <span>Primary Focus</span>
                   </div>
                 )}
 
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                <div className="project-header-row">
                   <div>
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <h3 className="font-serif text-2xl font-semibold text-[var(--text-primary)]">
+                      <h3 className="project-title">
                         {project.name}
                       </h3>
                       <span className={`status-badge ${getStatusBadgeClass(project.status)}`}>
@@ -77,7 +77,7 @@ export const FeaturedProjects: React.FC = () => {
                       </span>
                     </div>
                     {project.subtitle && (
-                      <p className="text-xs font-mono text-[var(--text-muted)] mb-1">
+                      <p className="project-subtitle">
                         {project.subtitle}
                       </p>
                     )}
@@ -108,13 +108,13 @@ export const FeaturedProjects: React.FC = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed mb-5 font-sans">
+                <p className="project-desc font-sans">
                   {project.description}
                 </p>
 
                 {/* Tech Stack Pills */}
-                <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="text-xs font-mono text-[var(--text-muted)] mr-2">Stack:</span>
+                <div className="project-stack-row">
+                  <span className="project-stack-label">Stack:</span>
                   <div className="flex flex-wrap items-center">
                     {project.technologies.map((tech) => (
                       <span key={tech} className="tech-tag">
@@ -126,10 +126,10 @@ export const FeaturedProjects: React.FC = () => {
 
                 {/* Expanded Details Section */}
                 {isExpanded && (
-                  <div className="mt-6 pt-5 border-t border-[var(--border-subtle)] space-y-4 animate-fade-in">
+                  <div className="mt-6 pt-6 border-t border-[var(--border-subtle)] space-y-5 animate-fade-in">
                     {project.fullDetails && (
                       <div>
-                        <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] mb-1.5">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] mb-2 font-semibold">
                           Architecture Overview
                         </h4>
                         <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
@@ -141,12 +141,12 @@ export const FeaturedProjects: React.FC = () => {
                     {/* Key Highlights */}
                     {project.highlights && project.highlights.length > 0 && (
                       <div>
-                        <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] mb-2">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] mb-2.5 font-semibold">
                           Key Technical Characteristics
                         </h4>
-                        <ul className="space-y-1.5 text-sm text-[var(--text-secondary)]">
+                        <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           {project.highlights.map((highlight, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
+                            <li key={idx} className="flex items-start gap-2.5">
                               <span className="text-[var(--accent)] font-mono text-xs mt-0.5">•</span>
                               <span>{highlight}</span>
                             </li>
@@ -157,17 +157,17 @@ export const FeaturedProjects: React.FC = () => {
 
                     {/* Metrics / Specifications */}
                     {project.metrics && project.metrics.length > 0 && (
-                      <div className="pt-2">
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      <div className="pt-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                           {project.metrics.map((metric, idx) => (
                             <div
                               key={idx}
-                              className="p-2.5 rounded bg-[var(--bg-subtle)] border border-[var(--border-subtle)]"
+                              className="p-3 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-subtle)]"
                             >
                               <div className="text-[11px] font-mono text-[var(--text-muted)]">
                                 {metric.label}
                               </div>
-                              <div className="text-xs sm:text-sm font-mono font-semibold text-[var(--text-primary)] mt-0.5">
+                              <div className="text-xs sm:text-sm font-mono font-semibold text-[var(--text-primary)] mt-1">
                                 {metric.value}
                               </div>
                             </div>

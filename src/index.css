@@ -199,6 +199,79 @@ body {
   margin-bottom: 0.5rem !important;
 }
 
+/* Featured Work Explicit Rules */
+.project-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  margin-bottom: 2.25rem !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.project-card:hover {
+  border-color: var(--border-strong) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.project-primary-tag {
+  position: absolute !important;
+  top: -0.75rem !important;
+  left: 1.75rem !important;
+  padding: 0.3rem 0.85rem !important;
+  border-radius: 4px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+}
+
+.project-title {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 1.65rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.project-subtitle {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.project-desc {
+  font-size: 0.95rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.75 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.project-stack-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.project-stack-label {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+  margin-right: 0.85rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
 /* Currently Exploring Spacing & Alignment Rules */
 .exploring-card {
   background-color: var(--bg-surface) !important;
@@ -295,6 +368,105 @@ body {
 .exploring-tag:hover {
   border-color: var(--border-strong) !important;
   color: var(--text-primary) !important;
+}
+
+/* Build Log Explicit Rules */
+.buildlog-entry {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  margin-bottom: 0.5rem !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  transition: background-color 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.buildlog-date-col {
+  margin-bottom: 0.75rem !important;
+}
+
+.buildlog-title-text {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.35 !important;
+}
+
+.buildlog-summary-text {
+  font-size: 0.95rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.7 !important;
+}
+
+/* Contact Section Explicit Rules */
+.contact-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 16px !important;
+  padding: 3rem 2rem !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin-top: 1rem !important;
+}
+
+.contact-icon-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.85rem !important;
+  border-radius: 9999px !important;
+  background-color: var(--bg-subtle) !important;
+  color: var(--accent) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.contact-desc {
+  font-size: 1.05rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.75 !important;
+  max-width: 36rem !important;
+  margin: 0 auto 2.25rem auto !important;
+}
+
+.contact-button-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 2rem auto !important;
+}
+
+.contact-btn {
+  margin-right: 1rem !important;
+  margin-bottom: 0.85rem !important;
+  min-width: 140px !important;
+  justify-content: center !important;
+}
+
+.contact-email-box {
+  padding-top: 1.75rem !important;
+  margin-top: 1.75rem !important;
+  border-top: 1px solid var(--border-subtle) !important;
+}
+
+.contact-email-label {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.contact-email-code {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.85rem !important;
+  padding: 0.4rem 0.85rem !important;
+  border-radius: 6px !important;
+  background-color: var(--bg-subtle) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  display: inline-block !important;
 }
 
 /* Badges & Tags */
@@ -426,21 +598,6 @@ body {
   background-color: var(--bg-subtle);
   border-color: var(--text-primary);
   transform: translateY(-1px);
-}
-
-/* Cards */
-.editorial-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 1.75rem;
-  margin-bottom: 1.75rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.editorial-card:hover {
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-md);
 }
 
 /* Paragraph spacing */
