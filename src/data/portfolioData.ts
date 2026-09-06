@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   subtitle: "AI Developer, Builder & Technology Experimenter.",
   description: "I explore and build practical AI systems, local language models, computer vision applications, and intelligent technologies for real-world devices.",
   identityStatement: "I explore emerging technologies and turn ideas into working prototypes.",
-  email: "ragunath.periyasamy@example.com",
+  email: "raguanth.prof@gmail.com",
   location: "On-device AI & Robotics Lab",
   philosophy: {
     quote: "Explore. Build. Experiment. Learn.",
@@ -39,9 +39,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     platform: "Email",
-    url: "mailto:ragunath.periyasamy@example.com",
+    url: "mailto:raguanth.prof@gmail.com",
     icon: "mail",
-    handle: "ragunath.periyasamy@example.com"
+    handle: "raguanth.prof@gmail.com"
   }
 ];
 

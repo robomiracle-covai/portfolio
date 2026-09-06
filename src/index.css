@@ -370,6 +370,67 @@ body {
   color: var(--text-primary) !important;
 }
 
+/* Experiments Section Explicit Spacing Rules */
+.experiment-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  padding: 1.75rem !important;
+  margin-bottom: 1.75rem !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.experiment-card:hover {
+  border-color: var(--border-strong) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.experiment-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.experiment-title {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-top: 0.35rem !important;
+  margin-bottom: 0.85rem !important;
+  line-height: 1.35 !important;
+}
+
+.experiment-desc {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.7 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.experiment-takeaway-box {
+  padding: 0.85rem 1.1rem !important;
+  border-radius: 8px !important;
+  background-color: var(--bg-subtle) !important;
+  border: 1px solid var(--border-subtle) !important;
+  font-size: 0.825rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.experiment-footer {
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+}
+
 /* Build Log Explicit Rules */
 .buildlog-entry {
   padding-top: 2rem !important;
@@ -625,6 +686,45 @@ pre code {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
+}
+
+/* Mobile Responsiveness Adjustments */
+@media (max-width: 640px) {
+  .container-custom, .container-narrow {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .editorial-card, .project-card, .exploring-card, .experiment-card, .contact-card {
+    padding: 1.35rem !important;
+    border-radius: 10px !important;
+  }
+
+  .hero-btn, .contact-btn {
+    width: 100% !important;
+    margin-right: 0 !important;
+    justify-content: center !important;
+  }
+
+  .hero-connect-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-connect-label {
+    margin-right: 0 !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hero-connect-link {
+    margin-right: 0 !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .contact-button-row {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
 }
 
 /* Animations */
