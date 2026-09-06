@@ -1,8 +1,27 @@
 import React from 'react';
-import { Compass } from 'lucide-react';
+import { Compass, Bot, Brain, Smartphone, Eye, Box, Cog } from 'lucide-react';
 import { EXPLORING_TOPICS } from '../data/portfolioData';
 
 export const CurrentlyExploring: React.FC = () => {
+  const getTopicIcon = (id: string) => {
+    switch (id) {
+      case 'humanoid-robotics':
+        return <Bot size={22} className="text-[var(--accent)]" />;
+      case 'local-edge-llms':
+        return <Brain size={22} className="text-[var(--accent)]" />;
+      case 'ai-on-mobile':
+        return <Smartphone size={22} className="text-[var(--accent)]" />;
+      case 'computer-vision':
+        return <Eye size={22} className="text-[var(--accent)]" />;
+      case '3d-printing':
+        return <Box size={22} className="text-[var(--accent)]" />;
+      case 'intelligent-automation':
+        return <Cog size={22} className="text-[var(--accent)]" />;
+      default:
+        return <Compass size={22} className="text-[var(--accent)]" />;
+    }
+  };
+
   return (
     <section id="exploring" className="section-padding bg-[var(--bg-subtle)]/40 border-y border-[var(--border-subtle)]">
       <div className="container-custom">
@@ -26,10 +45,10 @@ export const CurrentlyExploring: React.FC = () => {
               className="exploring-card"
             >
               <div>
-                {/* Header with Icon and Titles */}
+                {/* Header with Technical SVG Icon and Titles */}
                 <div className="exploring-header">
                   <span className="exploring-icon-box">
-                    {topic.icon}
+                    {getTopicIcon(topic.id)}
                   </span>
                   <div>
                     <h3 className="exploring-item-title">

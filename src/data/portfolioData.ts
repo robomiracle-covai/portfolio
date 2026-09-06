@@ -111,7 +111,7 @@ export const FEATURED_PROJECTS: Project[] = [
 export const EXPLORING_TOPICS: ExploringTopic[] = [
   {
     id: "humanoid-robotics",
-    icon: "🤖",
+    icon: "bot",
     title: "Humanoid Robotics",
     subtitle: "Embodied Intelligence & Kinematics",
     description: "Building physical structural components with 3D printing and experimenting with actuator control, balance algorithms, and sensory feedback loops.",
@@ -119,7 +119,7 @@ export const EXPLORING_TOPICS: ExploringTopic[] = [
   },
   {
     id: "local-edge-llms",
-    icon: "🧠",
+    icon: "brain",
     title: "Local & Edge LLMs",
     subtitle: "Offline Language Modeling",
     description: "Benchmarking 1B to 8B open-weight models on consumer hardware, optimizing quantization (GGUF, AWQ), and evaluating local prompt execution speed.",
@@ -127,7 +127,7 @@ export const EXPLORING_TOPICS: ExploringTopic[] = [
   },
   {
     id: "ai-on-mobile",
-    icon: "📱",
+    icon: "smartphone",
     title: "AI on Mobile Devices",
     subtitle: "Android & NPU Acceleration",
     description: "Leveraging Android NNAPI, LiteRT (TensorFlow Lite), and Qualcomm NPU SDKs to run neural networks locally on smartphones and tablets.",
@@ -135,7 +135,7 @@ export const EXPLORING_TOPICS: ExploringTopic[] = [
   },
   {
     id: "computer-vision",
-    icon: "👁️",
+    icon: "eye",
     title: "Computer Vision",
     subtitle: "Perception & Spatial Understanding",
     description: "Real-time object detection, face registration, edge depth estimation, and visual feature tracking for camera-equipped prototype devices.",
@@ -143,7 +143,7 @@ export const EXPLORING_TOPICS: ExploringTopic[] = [
   },
   {
     id: "3d-printing",
-    icon: "🖨️",
+    icon: "box",
     title: "3D Printing",
     subtitle: "Rapid Prototyping & Enclosures",
     description: "Designing functional enclosures, mechanical joints, structural brackets, and motor mounts using CAD and additive manufacturing.",
@@ -151,7 +151,7 @@ export const EXPLORING_TOPICS: ExploringTopic[] = [
   },
   {
     id: "intelligent-automation",
-    icon: "⚙️",
+    icon: "cog",
     title: "Intelligent Automation",
     subtitle: "Autonomous Local Workflows",
     description: "Connecting local LLM reasoning to tool execution, device sensors, and system scripts for seamless hands-free automated tasks.",
