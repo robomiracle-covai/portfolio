@@ -199,6 +199,104 @@ body {
   margin-bottom: 0.5rem !important;
 }
 
+/* Currently Exploring Spacing & Alignment Rules */
+.exploring-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  padding: 1.75rem !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.exploring-card:hover {
+  border-color: var(--border-strong) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.exploring-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.exploring-icon-box {
+  font-size: 1.75rem !important;
+  padding: 0.65rem 0.85rem !important;
+  border-radius: 8px !important;
+  background-color: var(--bg-subtle) !important;
+  border: 1px solid var(--border-subtle) !important;
+  flex-shrink: 0 !important;
+}
+
+.exploring-item-title {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.25rem !important;
+  line-height: 1.3 !important;
+}
+
+.exploring-item-subtitle {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.725rem !important;
+  color: var(--text-muted) !important;
+}
+
+.exploring-desc {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.7 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.exploring-vectors-section {
+  padding-top: 1.25rem !important;
+  margin-top: 1rem !important;
+  border-top: 1px solid var(--border-subtle) !important;
+}
+
+.exploring-vectors-label {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.exploring-tags-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+}
+
+.exploring-tag {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.725rem !important;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 5px !important;
+  background-color: var(--bg-subtle) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  margin-right: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  transition: all 0.15s ease !important;
+}
+
+.exploring-tag:hover {
+  border-color: var(--border-strong) !important;
+  color: var(--text-primary) !important;
+}
+
 /* Badges & Tags */
 .tech-tag {
   font-family: 'JetBrains Mono', monospace;
