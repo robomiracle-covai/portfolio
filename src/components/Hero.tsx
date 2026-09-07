@@ -1,7 +1,6 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Mail, Terminal } from 'lucide-react';
-import { PERSONAL_INFO, SOCIAL_LINKS } from '../data/portfolioData';
-import { NodeNetworkCanvas } from './NodeNetworkCanvas';
+import { Mail, Terminal, Star, ExternalLink } from 'lucide-react';
+import { SOCIAL_LINKS } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Hero: React.FC = () => {
@@ -10,97 +9,100 @@ export const Hero: React.FC = () => {
   const emailLink = SOCIAL_LINKS.find((s) => s.platform === 'Email')?.url || '#';
 
   return (
-    <section id="hero" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 md:py-28">
-      {/* Subtle Node Canvas Backdrop */}
-      <NodeNetworkCanvas />
+    <section id="hero" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden py-14 md:py-20">
+      <div className="container-custom relative z-10 w-full">
+        {/* Main Heading - Sebastian Raschka Style */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-8 font-sans">
+          Hello, I'm Ragunath Periyasamy
+        </h1>
 
-      <div className="container-narrow relative z-10">
-        <div className="flex flex-col items-start">
-          
-          {/* Status / Identity Pill */}
-          <div className="hero-status-pill px-3.5 py-1.5 rounded-full bg-[var(--bg-subtle)] border border-[var(--border-subtle)] text-xs font-mono text-[var(--text-secondary)] shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-            <span>On-device AI · Local LLMs · Robotics</span>
-          </div>
+        {/* Bio Text & Circular Avatar 2-Column Section */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-center mb-6">
+          {/* Left Column: Bio Paragraphs */}
+          <div className="md:col-span-8 space-y-4 text-base sm:text-lg leading-relaxed text-[var(--text-secondary)] font-sans">
+            <p>
+              I am an AI Developer and Technology Experimenter with a focus on practical artificial intelligence, local language models, computer vision applications, and intelligent systems for real-world devices.
+            </p>
 
-          {/* Main Heading */}
-          <h1 className="hero-title font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[var(--text-primary)] leading-[1.15]">
-            {PERSONAL_INFO.headline}
-          </h1>
+            <p>
+              My work bridges software engineering and emerging edge technologies, exploring how intelligent systems can run efficiently on consumer hardware, interact with the physical world, and eventually become part of robotics and humanoid systems.
+            </p>
 
-          {/* Subtitle */}
-          <h2 className="hero-subtitle text-xl sm:text-2xl font-normal text-[var(--accent)] font-sans tracking-tight">
-            {PERSONAL_INFO.subtitle}
-          </h2>
+            <p>
+              I explore open-source architectures, build hands-on prototypes, and document benchmarks and engineering insights in my{' '}
+              <a href="#build-log" className="text-link">
+                research build log
+              </a>.
+            </p>
 
-          {/* Description */}
-          <p className="hero-description text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl font-sans">
-            {PERSONAL_INFO.description}
-          </p>
-
-          {/* Action Buttons */}
-          <div className="hero-button-group">
-            <a href="#projects" className="btn-primary hero-btn">
-              <span>View My Projects</span>
-              <ArrowRight size={16} />
-            </a>
-
-            <a href="#build-log" className="btn-secondary hero-btn">
-              <BookOpen size={16} />
-              <span>Read My Build Log</span>
-            </a>
-          </div>
-
-          {/* Identity Statement Banner */}
-          <div className="hero-ethos-banner w-full rounded-lg bg-[var(--bg-subtle)]/70 border border-[var(--border-subtle)] flex items-start gap-3.5">
-            <Terminal size={18} className="text-[var(--accent)] shrink-0 mt-0.5" />
-            <p className="text-xs sm:text-sm font-mono text-[var(--text-secondary)] leading-relaxed">
-              <span className="text-[var(--text-primary)] font-semibold">Ethos: </span>
-              "{PERSONAL_INFO.identityStatement}"
+            <p>
+              My expertise lies in local LLM deployment, computer vision pipelines, and code-driven implementations. (For my most up-to-date background and details, please visit my{' '}
+              <a
+                href={linkedinLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-link inline-flex items-center gap-0.5"
+              >
+                <span>LinkedIn profile</span>
+                <ExternalLink size={12} className="inline opacity-70" />
+              </a>.)
             </p>
           </div>
 
-          {/* Social Links */}
-          <div className="hero-connect-row text-sm font-medium text-[var(--text-secondary)] w-full">
-            <span className="hero-connect-label text-xs uppercase tracking-wider text-[var(--text-muted)] font-mono">
-              Connect:
-            </span>
-            
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-connect-link hover:text-[var(--text-primary)] transition-colors group"
-            >
-              <GithubIcon size={16} />
-              <span className="underline decoration-[var(--border-strong)] group-hover:decoration-[var(--text-primary)] underline-offset-4">
-                GitHub
-              </span>
-            </a>
-
-            <a
-              href={linkedinLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-connect-link hover:text-[var(--text-primary)] transition-colors group"
-            >
-              <LinkedinIcon size={16} />
-              <span className="underline decoration-[var(--border-strong)] group-hover:decoration-[var(--text-primary)] underline-offset-4">
-                LinkedIn
-              </span>
-            </a>
-
-            <a
-              href={emailLink}
-              className="hero-connect-link hover:text-[var(--text-primary)] transition-colors group"
-            >
-              <Mail size={16} />
-              <span className="underline decoration-[var(--border-strong)] group-hover:decoration-[var(--text-primary)] underline-offset-4">
-                Email
-              </span>
-            </a>
+          {/* Right Column: Circular Avatar Image (On mobile, positioned right after the paragraphs) */}
+          <div className="md:col-span-4 flex justify-center md:justify-end items-center my-6 md:my-0">
+            <div className="hero-avatar-wrap">
+              <img
+                src="/RAGU.png"
+                alt="Ragunath Periyasamy"
+                className="hero-avatar-img"
+              />
+            </div>
           </div>
+        </div>
 
+        {/* Action Buttons - Sebastian Raschka Style Pill Buttons */}
+        <div className="hero-button-group">
+          <a href="#projects" className="btn-sebastian-dark">
+            <Terminal size={15} />
+            <span>Start Here</span>
+          </a>
+
+          <a href="#build-log" className="btn-sebastian-outline">
+            <Star size={15} className="text-amber-500 fill-amber-500" />
+            <span>Best Articles & Logs</span>
+          </a>
+        </div>
+
+        {/* Quick Connect & Links Row */}
+        <div className="hero-connect-row">
+          <a
+            href={linkedinLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+          >
+            <LinkedinIcon size={15} />
+            <span className="group-hover:underline">LinkedIn Profile</span>
+          </a>
+
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+          >
+            <GithubIcon size={15} />
+            <span className="group-hover:underline">GitHub Profile</span>
+          </a>
+
+          <a
+            href={emailLink}
+            className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+          >
+            <Mail size={15} />
+            <span className="group-hover:underline">Contact via Email</span>
+          </a>
         </div>
       </div>
     </section>

@@ -25,21 +25,21 @@ export const About: React.FC = () => {
         </div>
 
         {/* Tech Focus Highlights Grid */}
-        <div className="mt-10 pt-8 border-t border-[var(--border-subtle)] grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="p-4 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-subtle)]">
-            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-1 font-semibold">
+        <div className="mt-10 pt-8 border-t border-[var(--border-subtle)] grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="about-focus-card">
+            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2 font-semibold">
               Primary Objective
             </div>
-            <div className="text-sm text-[var(--text-primary)]">
+            <div className="text-sm text-[var(--text-primary)] leading-relaxed">
               Bridging local on-device AI models with real-world physical hardware and mobile devices.
             </div>
           </div>
 
-          <div className="p-4 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-subtle)]">
-            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-1 font-semibold">
+          <div className="about-focus-card">
+            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2 font-semibold">
               Methodology
             </div>
-            <div className="text-sm text-[var(--text-primary)]">
+            <div className="text-sm text-[var(--text-primary)] leading-relaxed">
               Hands-on practical prototyping, continuous benchmarking, and open technical journal documentation.
             </div>
           </div>

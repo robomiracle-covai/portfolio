@@ -12,11 +12,11 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="py-12 bg-[var(--bg-primary)] border-t border-[var(--border-subtle)] text-sm font-sans text-[var(--text-secondary)]">
-      <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="mt-16 sm:mt-24 py-12 bg-[var(--bg-primary)] border-t border-[var(--border-subtle)] text-sm font-sans text-[var(--text-secondary)]">
+      <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6 pt-4">
         {/* Brand & Copy */}
-        <div className="text-center md:text-left space-y-1">
-          <div className="font-serif text-lg font-semibold text-[var(--text-primary)]">
+        <div className="text-center md:text-left space-y-1.5 mt-2">
+          <div className="font-sans text-xl font-bold text-[var(--text-primary)] tracking-tight">
             {PERSONAL_INFO.name}
           </div>
           <div className="text-xs font-mono text-[var(--text-muted)]">

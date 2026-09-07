@@ -63,8 +63,7 @@ export const FEATURED_PROJECTS: Project[] = [
     metrics: [
       { label: "Max Tokens/sec", value: "28.4 tok/s (Qwen-1.5B)" },
       { label: "RAM Footprint", value: "< 2.1 GB Peak" }
-    ],
-    githubUrl: "https://github.com/ragunath/edge-llm-benchmarks"
+    ]
   },
   {
     id: "face-recognition-system",
@@ -83,8 +82,7 @@ export const FEATURED_PROJECTS: Project[] = [
     metrics: [
       { label: "Accuracy", value: "99.2% LFW benchmark" },
       { label: "Latency", value: "32ms / frame" }
-    ],
-    githubUrl: "https://github.com/ragunath/face-recognition-pipeline"
+    ]
   },
   {
     id: "humanoid-robotics-3d-printing",
@@ -103,8 +101,7 @@ export const FEATURED_PROJECTS: Project[] = [
     metrics: [
       { label: "DOF Explored", value: "12 Degrees of Freedom" },
       { label: "Material Focus", value: "PETG & Carbon PLA" }
-    ],
-    githubUrl: "https://github.com/ragunath/humanoid-hardware-notes"
+    ]
   }
 ];
 

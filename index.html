@@ -14,6 +14,16 @@
     <meta property="og:type" content="website" />
     
     <title>Ragunath Periyasamy — AI Developer & Technology Experimenter</title>
+    <script>
+      (function() {
+        var stored = localStorage.getItem('theme-preference');
+        if (stored === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

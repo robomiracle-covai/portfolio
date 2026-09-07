@@ -6,11 +6,8 @@ export function getInitialTheme(): Theme {
     if (storedTheme === 'light' || storedTheme === 'dark') {
       return storedTheme;
     }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
   }
-  return 'light'; // Default warm light editorial theme
+  return 'light'; // Default to light mode
 }
 
 export function setTheme(theme: Theme) {
