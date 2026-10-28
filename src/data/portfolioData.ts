@@ -9,6 +9,9 @@ export const PERSONAL_INFO = {
   description: "I explore and build practical AI systems, local language models, computer vision applications, and intelligent technologies for real-world devices.",
   identityStatement: "I explore emerging technologies and turn ideas into working prototypes.",
   email: "raguanth.prof@gmail.com",
+  phone: "+91 91594 13234",
+  whatsapp: "https://wa.me/919159413234",
+  instagram: "https://www.instagram.com/ragunath_4",
   location: "On-device AI & Robotics Lab",
   philosophy: {
     quote: "Explore. Build. Experiment. Learn.",
@@ -36,6 +39,18 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: "https://www.linkedin.com/in/ragunathmp",
     icon: "linkedin",
     handle: "ragunathmp"
+  },
+  {
+    platform: "Instagram",
+    url: "https://www.instagram.com/ragunath_4",
+    icon: "instagram",
+    handle: "ragunath_4"
+  },
+  {
+    platform: "WhatsApp",
+    url: "https://wa.me/919159413234",
+    icon: "whatsapp",
+    handle: "+91 91594 13234"
   },
   {
     platform: "Email",

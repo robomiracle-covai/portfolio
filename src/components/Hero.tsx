@@ -1,11 +1,13 @@
 import React from 'react';
 import { Mail, Terminal, Star, ExternalLink } from 'lucide-react';
 import { SOCIAL_LINKS } from '../data/portfolioData';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from './Icons';
 
 export const Hero: React.FC = () => {
   const githubLink = SOCIAL_LINKS.find((s) => s.platform === 'GitHub')?.url || '#';
   const linkedinLink = SOCIAL_LINKS.find((s) => s.platform === 'LinkedIn')?.url || '#';
+  const instagramLink = SOCIAL_LINKS.find((s) => s.platform === 'Instagram')?.url || '#';
+  const whatsappLink = SOCIAL_LINKS.find((s) => s.platform === 'WhatsApp')?.url || '#';
   const emailLink = SOCIAL_LINKS.find((s) => s.platform === 'Email')?.url || '#';
 
   return (
@@ -83,7 +85,7 @@ export const Hero: React.FC = () => {
             className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
           >
             <LinkedinIcon size={15} />
-            <span className="group-hover:underline">LinkedIn Profile</span>
+            <span className="group-hover:underline">LinkedIn</span>
           </a>
 
           <a
@@ -93,15 +95,39 @@ export const Hero: React.FC = () => {
             className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
           >
             <GithubIcon size={15} />
-            <span className="group-hover:underline">GitHub Profile</span>
+            <span className="group-hover:underline">GitHub</span>
           </a>
+
+          {instagramLink !== '#' && (
+            <a
+              href={instagramLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+            >
+              <InstagramIcon size={15} />
+              <span className="group-hover:underline">Instagram</span>
+            </a>
+          )}
+
+          {whatsappLink !== '#' && (
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+            >
+              <WhatsAppIcon size={15} />
+              <span className="group-hover:underline">WhatsApp</span>
+            </a>
+          )}
 
           <a
             href={emailLink}
             className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
           >
             <Mail size={15} />
-            <span className="group-hover:underline">Contact via Email</span>
+            <span className="group-hover:underline">Email</span>
           </a>
         </div>
       </div>

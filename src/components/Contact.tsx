@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Mail, Check, MessageSquare, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../data/portfolioData';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from './Icons';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const linkedinLink = SOCIAL_LINKS.find((s) => s.platform === 'LinkedIn')?.url || '#';
   const githubLink = SOCIAL_LINKS.find((s) => s.platform === 'GitHub')?.url || '#';
+  const instagramLink = SOCIAL_LINKS.find((s) => s.platform === 'Instagram')?.url || '#';
+  const whatsappLink = SOCIAL_LINKS.find((s) => s.platform === 'WhatsApp')?.url || '#';
   const emailAddress = PERSONAL_INFO.email;
 
   const handleCopyEmail = () => {
@@ -57,6 +59,32 @@ export const Contact: React.FC = () => {
               <ArrowUpRight size={14} className="opacity-70 ml-1" />
             </a>
 
+            {whatsappLink !== '#' && (
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary contact-btn"
+              >
+                <WhatsAppIcon size={18} />
+                <span>WhatsApp</span>
+                <ArrowUpRight size={14} className="opacity-70 ml-1" />
+              </a>
+            )}
+
+            {instagramLink !== '#' && (
+              <a
+                href={instagramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary contact-btn"
+              >
+                <InstagramIcon size={18} />
+                <span>Instagram</span>
+                <ArrowUpRight size={14} className="opacity-70 ml-1" />
+              </a>
+            )}
+
             <button
               onClick={handleCopyEmail}
               className="btn-secondary contact-btn cursor-pointer relative"
@@ -67,12 +95,30 @@ export const Contact: React.FC = () => {
             </button>
           </div>
 
-          {/* Email Address Display */}
+          {/* Email & Contact Details Display */}
           <div className="contact-email-box">
-            <span className="contact-email-label block">Direct Address:</span>
-            <code className="contact-email-code select-all">
-              {emailAddress}
-            </code>
+            <span className="contact-email-label block">Direct Details:</span>
+            <div className="flex flex-wrap items-center justify-center gap-2.5">
+              <code className="contact-email-code select-all">
+                {emailAddress}
+              </code>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-email-code hover:border-[var(--border-strong)] transition-colors flex items-center gap-1.5"
+              >
+                <span>WhatsApp: {PERSONAL_INFO.phone}</span>
+              </a>
+              <a
+                href={instagramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-email-code hover:border-[var(--border-strong)] transition-colors flex items-center gap-1.5"
+              >
+                <span>Instagram: @ragunath_4</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
