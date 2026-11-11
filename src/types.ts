@@ -2,16 +2,21 @@ export interface Project {
   id: string;
   name: string;
   subtitle?: string;
+  image?: string;
   description: string;
-  fullDetails?: string;
   technologies: string[];
-  status: 'Active Development' | 'Research & Experimentation' | 'Experimental' | 'Exploration';
-  statusColor?: string;
+  context?: string;
   githubUrl?: string;
-  demoUrl?: string;
-  isPrimary?: boolean;
-  highlights?: string[];
-  metrics?: { label: string; value: string }[];
+  githubLabel?: string;
+}
+
+export interface Robot {
+  id: string;
+  name: string;
+  image?: string;
+  secondaryImage?: string;
+  description: string;
+  role?: string;
 }
 
 export interface BuildLogEntry {
@@ -32,28 +37,6 @@ export interface BuildLogEntry {
     nextSteps?: string[];
   };
   tags: string[];
-}
-
-export interface Experiment {
-  id: string;
-  title: string;
-  category: 'LLMs' | 'Computer Vision' | 'Android & Mobile' | 'Robotics & Hardware' | 'Voice & Audio';
-  description: string;
-  status: 'Completed' | 'In Progress' | 'Prototype';
-  date: string;
-  technologies: string[];
-  takeaway: string;
-  codeSnippet?: string;
-  githubUrl?: string;
-}
-
-export interface ExploringTopic {
-  id: string;
-  icon: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  focusAreas: string[];
 }
 
 export interface SocialLink {

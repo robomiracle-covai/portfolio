@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { SOCIAL_LINKS } from '../data/portfolioData';
 import type { Theme } from '../utils/theme';
-import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from './Icons';
+import { GithubIcon, LinkedinIcon } from './Icons';
 
 interface HeaderProps {
   theme: Theme;
@@ -27,18 +27,15 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
+    { name: 'Work', href: '#work' },
     { name: 'Projects', href: '#projects' },
     { name: 'Build Log', href: '#build-log' },
-    { name: 'Experiments', href: '#experiments' },
-    { name: 'Exploring', href: '#exploring' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
   const githubLink = SOCIAL_LINKS.find(s => s.platform === 'GitHub')?.url || '#';
   const linkedinLink = SOCIAL_LINKS.find(s => s.platform === 'LinkedIn')?.url || '#';
-  const instagramLink = SOCIAL_LINKS.find(s => s.platform === 'Instagram')?.url || '#';
-  const whatsappLink = SOCIAL_LINKS.find(s => s.platform === 'WhatsApp')?.url || '#';
 
   return (
     <header
@@ -83,30 +80,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
               >
                 <GithubIcon size={16} />
               </a>
-              {instagramLink !== '#' && (
-                <a
-                  href={instagramLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors p-1"
-                  aria-label="Instagram Profile"
-                  title="Instagram Profile"
-                >
-                  <InstagramIcon size={16} />
-                </a>
-              )}
-              {whatsappLink !== '#' && (
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors p-1"
-                  aria-label="WhatsApp"
-                  title="WhatsApp"
-                >
-                  <WhatsAppIcon size={16} />
-                </a>
-              )}
             </div>
           </div>
 
@@ -203,28 +176,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
               >
                 <GithubIcon size={18} />
               </a>
-              {instagramLink !== '#' && (
-                <a
-                  href={instagramLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon size={18} />
-                </a>
-              )}
-              {whatsappLink !== '#' && (
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-                  aria-label="WhatsApp"
-                >
-                  <WhatsAppIcon size={18} />
-                </a>
-              )}
             </div>
           </div>
         </div>

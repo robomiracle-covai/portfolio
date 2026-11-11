@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { FeaturedProjects } from './components/FeaturedProjects';
-import { CurrentlyExploring } from './components/CurrentlyExploring';
+import { Work } from './components/Work';
+import { Projects } from './components/Projects';
 import { BuildLog } from './components/BuildLog';
-import { Experiments } from './components/Experiments';
 import { About } from './components/About';
 import { Philosophy } from './components/Philosophy';
 import { Contact } from './components/Contact';
@@ -31,10 +30,9 @@ export function App() {
       <main className="flex-grow">
         <Hero />
         <div className="section-divider"></div>
-        <FeaturedProjects />
-        <CurrentlyExploring />
+        <Work />
+        <Projects />
         <BuildLog />
-        <Experiments />
         <Philosophy />
         <About />
         <Contact />

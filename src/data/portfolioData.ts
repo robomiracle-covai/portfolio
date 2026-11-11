@@ -1,38 +1,44 @@
-import type { Project, BuildLogEntry, Experiment, ExploringTopic, SocialLink } from '../types';
+import type { Project, BuildLogEntry, Robot, SocialLink } from '../types';
+
+export const GITHUB_USERNAME = "ragunath4";
+export const GITHUB_URL = `https://github.com/${GITHUB_USERNAME}`;
+export const RESUME_URL = "/resume.pdf";
 
 export const PERSONAL_INFO = {
   name: "Ragunath Periyasamy",
   brandName: "Ragunath Periyasamy",
-  title: "AI Developer, Builder & Technology Experimenter",
-  headline: "Hello, I'm Ragunath.",
-  subtitle: "AI Developer, Builder & Technology Experimenter.",
-  description: "I explore and build practical AI systems, local language models, computer vision applications, and intelligent technologies for real-world devices.",
-  identityStatement: "I explore emerging technologies and turn ideas into working prototypes.",
-  email: "raguanth.prof@gmail.com",
-  phone: "+91 91594 13234",
-  whatsapp: "https://wa.me/919159413234",
-  instagram: "https://www.instagram.com/ragunath_4",
-  location: "On-device AI & Robotics Lab",
+  title: "Robotics Software & AI Engineer",
+  headline: "I build software for robots that work in the real world.",
+  subline: "Research Engineer at RoboMiracle — building navigation, UI, voice and AI software for service robots deployed in hospitals and schools across India. Exploring on-device AI, LLMs and computer vision.",
+  email: "ragunathprof@gmail.com",
+  location: "Coimbatore, India",
   philosophy: {
     quote: "Explore. Build. Experiment. Learn.",
     subtext: "I believe the best way to understand technology is to build with it."
   },
   about: {
     paragraphs: [
-      "I'm Ragunath, a developer and technology enthusiast interested in building practical AI-powered systems.",
-      "My current work and experiments focus on local language models, AI assistants, computer vision, Android development, humanoid robotics, and 3D printing.",
-      "I enjoy learning emerging technologies by building with them. Rather than only studying ideas theoretically, I like turning concepts into working prototypes and documenting what I learn along the way.",
-      "I'm particularly interested in the future of AI beyond the cloud — where intelligent systems can run directly on personal devices, interact with the physical world, and eventually become part of robotics and humanoid systems."
-    ]
+      "I'm Ragunath, a Research Engineer at RoboMiracle in Coimbatore, where I build software for service robots that work alongside people in hospitals, schools and workplaces.",
+      "My work spans navigation and autonomy, touchscreen interfaces, voice and AI interaction, and the backend and hardware integration that ties a robot together — often finishing on-site, installing and tuning robots where they are deployed.",
+      "Outside work I explore on-device AI, large language models and computer vision, and I like learning by building working prototypes rather than only reading about ideas."
+    ],
+    experience: [
+      { role: "Research Engineer", org: "RoboMiracle, Coimbatore", period: "Aug 2026 – Present" },
+      { role: "Software Engineer", org: "dsignz media", period: "Jun 2025 – Aug 2026" }
+    ],
+    education: {
+      degree: "B.E. Electronics & Communication Engineering",
+      school: "Muthayammal Engineering College"
+    }
   }
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     platform: "GitHub",
-    url: "https://github.com",
+    url: GITHUB_URL,
     icon: "github",
-    handle: "@ragunath"
+    handle: `@${GITHUB_USERNAME}`
   },
   {
     platform: "LinkedIn",
@@ -41,133 +47,71 @@ export const SOCIAL_LINKS: SocialLink[] = [
     handle: "ragunathmp"
   },
   {
-    platform: "Instagram",
-    url: "https://www.instagram.com/ragunath_4",
-    icon: "instagram",
-    handle: "ragunath_4"
-  },
-  {
-    platform: "WhatsApp",
-    url: "https://wa.me/919159413234",
-    icon: "whatsapp",
-    handle: "+91 91594 13234"
-  },
-  {
     platform: "Email",
-    url: "mailto:raguanth.prof@gmail.com",
+    url: "mailto:ragunathprof@gmail.com",
     icon: "mail",
-    handle: "raguanth.prof@gmail.com"
+    handle: "ragunathprof@gmail.com"
   }
 ];
 
-export const FEATURED_PROJECTS: Project[] = [
+export const ROBOTS: Robot[] = [
   {
-    id: "local-ai-edge-llms",
-    name: "Local AI & Edge LLM Experiments",
-    subtitle: "On-Device Open Source LLM Execution",
-    description: "Experiments focused on running open-source language models efficiently on personal devices, tablets, and resource-constrained hardware.",
-    fullDetails: "Benchmarking and optimizing Qwen, Llama 3, and Phi models across consumer hardware. Exploring memory quantization techniques (Q4_K_M, IQ3_XS), RAM bandwidth bounds, thermal throttling behavior on handheld devices, and local RPC endpoints using Ollama and MLC-LLM.",
-    technologies: ["LLMs", "Qwen", "Ollama", "On-device AI", "Edge Computing"],
-    status: "Research & Experimentation",
-    isPrimary: true,
-    highlights: [
-      "Evaluated 1.5B to 7B parameter models on Snapdragon 8-series & Apple Silicon",
-      "Custom memory mapping scripts for low-RAM mobile targets",
-      "Structured JSON output generation with zero network latencies"
-    ],
-    metrics: [
-      { label: "Max Tokens/sec", value: "28.4 tok/s (Qwen-1.5B)" },
-      { label: "RAM Footprint", value: "< 2.1 GB Peak" }
-    ]
+    id: "nexus-a1",
+    name: "Nexus A1",
+    image: "/robots/nexus.png",
+    description: "Service humanoid robot with touchscreen, deployed at a hospital in Thiruvananthapuram.",
+    role: "Software and on-site installation."
   },
   {
-    id: "face-recognition-system",
-    name: "Face Recognition System",
-    subtitle: "Real-time Detection & Biometric Matching Pipeline",
-    description: "A practical computer vision project exploring face detection, face registration, recognition, and real-world integration.",
-    fullDetails: "Implements lightweight face detection (MediaPipe/YOLOv8-face) combined with MobileFaceNet embedding generation for real-time edge biometric verification. Supports batch image registration, lighting normalization, and cosine distance indexing.",
-    technologies: ["Computer Vision", "Face Detection", "Face Recognition", "AI"],
-    status: "Experimental",
-    isPrimary: false,
-    highlights: [
-      "Multi-angle face registration pipeline with anti-spoofing heuristic checks",
-      "Embedding database indexed with FAISS for instantaneous lookups",
-      "Runs at 30+ FPS on embedded Linux single-board computers"
-    ],
-    metrics: [
-      { label: "Accuracy", value: "99.2% LFW benchmark" },
-      { label: "Latency", value: "32ms / frame" }
-    ]
+    id: "medi-buddy",
+    name: "Medi Buddy",
+    description: "Autonomous hospital logistics robot moving sterile supplies to operating theatres at Aravind Eye Care.",
+    role: "Navigation and UI software."
   },
   {
-    id: "humanoid-robotics-3d-printing",
-    name: "Humanoid Robotics & 3D Printing",
-    subtitle: "Physical AI, Kinematics & Custom Hardware Fabrication",
-    description: "Exploring the intersection of AI, robotics, humanoid development, hardware experimentation, and 3D printing.",
-    fullDetails: "Designing custom 3D printed mechanical joints, servo actuation controllers, and micro-ROS nodes. Focuses on bringing vision-language models and motor control down to physical bipedal and arm manipulators.",
-    technologies: ["Robotics", "AI", "3D Printing", "Hardware"],
-    status: "Exploration",
-    isPrimary: false,
-    highlights: [
-      "Custom CAD designs for lightweight PETG/PLA+ structural limbs",
-      "PWM controller board interfacing with Android USB-serial communication",
-      "Forward and inverse kinematics experiments using Python & Rust"
-    ],
-    metrics: [
-      { label: "DOF Explored", value: "12 Degrees of Freedom" },
-      { label: "Material Focus", value: "PETG & Carbon PLA" }
-    ]
+    id: "nova-a1",
+    name: "Nova A1",
+    image: "/robots/nova.png",
+    description: "AI educational humanoid for schools and STEM labs, with face recognition and voice commands.",
+    role: "Voice and AI interaction."
+  },
+  {
+    id: "aurra",
+    name: "Aurra",
+    image: "/robots/aurra.png",
+    description: "Humanoid robot for workplaces and events.",
+    role: "Robot software."
+  },
+  {
+    id: "nila-dine",
+    name: "Nila and Dine Bot",
+    image: "/robots/nila.png",
+    secondaryImage: "/robots/dine.png",
+    description: "Reception and restaurant service robots."
   }
 ];
 
-export const EXPLORING_TOPICS: ExploringTopic[] = [
+export const ROBOTS_SUMMARY = "Across these robots I work on navigation & autonomy, touchscreen UI & apps, voice & AI interaction, and backend & hardware integration — using Python, ROS / ROS 2, Raspberry Pi and NVIDIA Jetson.";
+
+export const PROJECTS: Project[] = [
   {
-    id: "humanoid-robotics",
-    icon: "bot",
-    title: "Humanoid Robotics",
-    subtitle: "Embodied Intelligence & Kinematics",
-    description: "Building physical structural components with 3D printing and experimenting with actuator control, balance algorithms, and sensory feedback loops.",
-    focusAreas: ["Kinematics & Servo Control", "Micro-ROS Interfacing", "CAD & Structural Printing"]
+    id: "mister-mini",
+    name: "Mister Mini",
+    subtitle: "Adaptive Autonomous Assistance using Raspberry Pi",
+    image: "/projects/mister-mini.jpg",
+    description: "A 3D-printed humanoid robot built as my college final-year project with a team of six. It uses an OAK-D depth camera for perception and face recognition, with servo-driven arms, hands and head controlled from a Raspberry Pi.",
+    technologies: ["Raspberry Pi", "OAK-D", "Servo Motors", "Face Recognition", "3D Printing"],
+    context: "College final-year project · Team of 6",
+    githubUrl: `${GITHUB_URL}?tab=repositories&q=MisterMini`,
+    githubLabel: "Mechanical parts"
   },
   {
-    id: "local-edge-llms",
-    icon: "brain",
-    title: "Local & Edge LLMs",
-    subtitle: "Offline Language Modeling",
-    description: "Benchmarking 1B to 8B open-weight models on consumer hardware, optimizing quantization (GGUF, AWQ), and evaluating local prompt execution speed.",
-    focusAreas: ["llama.cpp & Ollama Optimization", "4-bit & 3-bit Quantization", "On-Device Inference Latency"]
-  },
-  {
-    id: "ai-on-mobile",
-    icon: "smartphone",
-    title: "AI on Mobile Devices",
-    subtitle: "Android & NPU Acceleration",
-    description: "Leveraging Android NNAPI, LiteRT (TensorFlow Lite), and Qualcomm NPU SDKs to run neural networks locally on smartphones and tablets.",
-    focusAreas: ["Kotlin Native Integration", "NPU / GPU Delegate Execution", "Zero-Latency Offline Features"]
-  },
-  {
-    id: "computer-vision",
-    icon: "eye",
-    title: "Computer Vision",
-    subtitle: "Perception & Spatial Understanding",
-    description: "Real-time object detection, face registration, edge depth estimation, and visual feature tracking for camera-equipped prototype devices.",
-    focusAreas: ["Face Recognition Pipelines", "OpenCV & MediaPipe", "Embedded Camera Streams"]
-  },
-  {
-    id: "3d-printing",
-    icon: "box",
-    title: "3D Printing",
-    subtitle: "Rapid Prototyping & Enclosures",
-    description: "Designing functional enclosures, mechanical joints, structural brackets, and motor mounts using CAD and additive manufacturing.",
-    focusAreas: ["Functional Mechanical Design", "PETG / PLA+ Print Optimization", "Enclosures for IoT & AI Modules"]
-  },
-  {
-    id: "intelligent-automation",
-    icon: "cog",
-    title: "Intelligent Automation",
-    subtitle: "Autonomous Local Workflows",
-    description: "Connecting local LLM reasoning to tool execution, device sensors, and system scripts for seamless hands-free automated tasks.",
-    focusAreas: ["Agentic Tool Calling", "Local Microservices & RPC", "Event-Driven Trigger Systems"]
+    id: "rag-chatbot",
+    name: "RAG Chatbot from scratch",
+    subtitle: "Retrieval-augmented generation",
+    description: "A retrieval-augmented generation chatbot built from the ground up — chunking and embedding documents, retrieving the most relevant passages for a question, and grounding the language model's answer in them.",
+    technologies: ["LLMs", "RAG", "Embeddings", "Python"],
+    context: "Personal project"
   }
 ];
 
@@ -286,73 +230,5 @@ void sendServoPosition(uint8_t id, uint16_t position, uint16_t timeMs) {
         "Implement basic inverse kinematics solver in Python with PyBullet simulation."
       ]
     }
-  }
-];
-
-export const EXPERIMENTS: Experiment[] = [
-  {
-    id: "exp-1",
-    title: "Testing Local Language Models on ARM64",
-    category: "LLMs",
-    description: "Benchmarking prompt processing time and RAM utilization for Qwen-1.5B and Phi-3 Mini across 4-bit and 3-bit GGUF quantizations.",
-    status: "Completed",
-    date: "Aug 2026",
-    technologies: ["GGUF", "llama.cpp", "Qwen", "ARM64"],
-    takeaway: "Q4_K_M quant offers the optimal memory/accuracy ratio on mobile hardware.",
-    codeSnippet: "./main -m qwen1.5-1.5b-chat-q4_k_m.gguf -p 'Summarize system state:' -n 128 -t 4",
-    githubUrl: "https://github.com/ragunath/edge-llm-benchmarks"
-  },
-  {
-    id: "exp-2",
-    title: "Android Native AI Camera Pipeline",
-    category: "Android & Mobile",
-    description: "Built a zero-copy Android Camera2 frame buffer consumer feeding raw YUV memory directly to LiteRT vision models.",
-    status: "Completed",
-    date: "Jul 2026",
-    technologies: ["Kotlin", "Android NDK", "LiteRT", "CameraX"],
-    takeaway: "Eliminating Bitmap allocation reduced frame latency from 45ms to 12ms.",
-    codeSnippet: "val imageBuffer = imageProxy.planes[0].buffer // Direct ByteBuffer transfer",
-    githubUrl: "https://github.com/ragunath/android-camera-pipeline"
-  },
-  {
-    id: "exp-3",
-    title: "Face Detection Prototype on Embedded Hardware",
-    category: "Computer Vision",
-    description: "Evaluated MobileNetV2 SSD vs SCRFD for face detection on low-power ARM single board computers.",
-    status: "Completed",
-    date: "Jun 2026",
-    technologies: ["OpenCV", "Python", "SCRFD", "TFLite"],
-    takeaway: "SCRFD maintains higher accuracy on rotated and occluded faces under low light.",
-    githubUrl: "https://github.com/ragunath/face-recognition-pipeline"
-  },
-  {
-    id: "exp-4",
-    title: "Voice Interaction & Wake-Word Engine",
-    category: "Voice & Audio",
-    description: "Testing open-source wake-word engines (openWakeWord and Porcupine) on Android for hands-free AI voice activation.",
-    status: "In Progress",
-    date: "Aug 2026",
-    technologies: ["Android", "AudioRecord", "TFLite", "DSP"],
-    takeaway: "A 120KB quantized wake-word model can run continuously with <1% battery impact per day."
-  },
-  {
-    id: "exp-5",
-    title: "Mobile NPU vs GPU Benchmark Matrix",
-    category: "Android & Mobile",
-    description: "Comparative speed testing for FP16 and INT8 tensor operations on Snapdragon Adreno GPU vs Hexagon NPU.",
-    status: "Completed",
-    date: "May 2026",
-    technologies: ["NNAPI", "LiteRT", "Qualcomm NPU SDK"],
-    takeaway: "INT8 models on Hexagon NPU run 3.4x faster with 60% less energy consumption than GPU."
-  },
-  {
-    id: "exp-6",
-    title: "3D Printed Mechanical Servo Joint Structural Tests",
-    category: "Robotics & Hardware",
-    description: "Tested tensile load tolerances of PETG vs Carbon Fiber PLA for robot hip and knee rotational mounts.",
-    status: "Prototype",
-    date: "Jul 2026",
-    technologies: ["3D Printing", "PETG", "CAD", "Hardware"],
-    takeaway: "PETG with 4 wall perimeters sustained 38kg static load before flex distortion."
   }
 ];

@@ -1,13 +1,12 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Mail } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../data/portfolioData';
-import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from './Icons';
+import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Footer: React.FC = () => {
   const githubLink = SOCIAL_LINKS.find((s) => s.platform === 'GitHub')?.url || '#';
   const linkedinLink = SOCIAL_LINKS.find((s) => s.platform === 'LinkedIn')?.url || '#';
-  const instagramLink = SOCIAL_LINKS.find((s) => s.platform === 'Instagram')?.url || '#';
-  const whatsappLink = SOCIAL_LINKS.find((s) => s.platform === 'WhatsApp')?.url || '#';
+  const emailLink = SOCIAL_LINKS.find((s) => s.platform === 'Email')?.url || '#';
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -25,7 +24,7 @@ export const Footer: React.FC = () => {
             {PERSONAL_INFO.title}
           </div>
           <div className="text-xs text-[var(--text-muted)] pt-1">
-            © 2026 Ragunath Periyasamy. All rights reserved.
+            © {new Date().getFullYear()} Ragunath Periyasamy. All rights reserved.
           </div>
         </div>
 
@@ -53,31 +52,14 @@ export const Footer: React.FC = () => {
             <span>LinkedIn</span>
           </a>
 
-          {instagramLink !== '#' && (
-            <a
-              href={instagramLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[var(--text-primary)] transition-colors flex items-center gap-1.5 text-xs font-mono"
-              aria-label="Instagram Profile"
-            >
-              <InstagramIcon size={14} />
-              <span>Instagram</span>
-            </a>
-          )}
-
-          {whatsappLink !== '#' && (
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[var(--text-primary)] transition-colors flex items-center gap-1.5 text-xs font-mono"
-              aria-label="WhatsApp"
-            >
-              <WhatsAppIcon size={14} />
-              <span>WhatsApp</span>
-            </a>
-          )}
+          <a
+            href={emailLink}
+            className="hover:text-[var(--text-primary)] transition-colors flex items-center gap-1.5 text-xs font-mono"
+            aria-label="Email"
+          >
+            <Mail size={14} />
+            <span>Email</span>
+          </a>
 
           <button
             onClick={scrollToTop}

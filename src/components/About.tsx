@@ -24,24 +24,29 @@ export const About: React.FC = () => {
           ))}
         </div>
 
-        {/* Tech Focus Highlights Grid */}
+        {/* Experience & Education */}
         <div className="mt-10 pt-8 border-t border-[var(--border-subtle)] grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="about-focus-card">
-            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2 font-semibold">
-              Primary Objective
+            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-3 font-semibold">
+              Experience
             </div>
-            <div className="text-sm text-[var(--text-primary)] leading-relaxed">
-              Bridging local on-device AI models with real-world physical hardware and mobile devices.
-            </div>
+            <ul className="space-y-3">
+              {PERSONAL_INFO.about.experience.map((job) => (
+                <li key={job.role + job.org}>
+                  <div className="text-sm font-semibold text-[var(--text-primary)]">{job.role}</div>
+                  <div className="text-sm text-[var(--text-secondary)]">{job.org}</div>
+                  <div className="text-xs font-mono text-[var(--text-muted)] mt-0.5">{job.period}</div>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="about-focus-card">
-            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2 font-semibold">
-              Methodology
+            <div className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-3 font-semibold">
+              Education
             </div>
-            <div className="text-sm text-[var(--text-primary)] leading-relaxed">
-              Hands-on practical prototyping, continuous benchmarking, and open technical journal documentation.
-            </div>
+            <div className="text-sm font-semibold text-[var(--text-primary)]">{PERSONAL_INFO.about.education.degree}</div>
+            <div className="text-sm text-[var(--text-secondary)]">{PERSONAL_INFO.about.education.school}</div>
           </div>
         </div>
       </div>

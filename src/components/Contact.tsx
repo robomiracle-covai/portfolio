@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import { Mail, Check, MessageSquare, ArrowUpRight } from 'lucide-react';
+import { Mail, Check, Copy, MessageSquare, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../data/portfolioData';
-import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from './Icons';
+import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const linkedinLink = SOCIAL_LINKS.find((s) => s.platform === 'LinkedIn')?.url || '#';
   const githubLink = SOCIAL_LINKS.find((s) => s.platform === 'GitHub')?.url || '#';
-  const instagramLink = SOCIAL_LINKS.find((s) => s.platform === 'Instagram')?.url || '#';
-  const whatsappLink = SOCIAL_LINKS.find((s) => s.platform === 'WhatsApp')?.url || '#';
   const emailAddress = PERSONAL_INFO.email;
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(emailAddress);
-    setCopied(true);
+    navigator.clipboard?.writeText(emailAddress).then(() => setCopied(true)).catch(() => {});
     setTimeout(() => setCopied(false), 2500);
   };
 
@@ -32,7 +29,7 @@ export const Contact: React.FC = () => {
           <h2 className="section-title mb-4">Let's Connect</h2>
 
           <p className="contact-desc font-sans">
-            I'm always interested in connecting with people working on AI, robotics, local intelligence, computer vision, and emerging technologies.
+            I'm always happy to talk with people working on robotics, on-device AI, LLMs and computer vision.
           </p>
 
           {/* Action Buttons */}
@@ -59,65 +56,30 @@ export const Contact: React.FC = () => {
               <ArrowUpRight size={14} className="opacity-70 ml-1" />
             </a>
 
-            {whatsappLink !== '#' && (
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary contact-btn"
-              >
-                <WhatsAppIcon size={18} />
-                <span>WhatsApp</span>
-                <ArrowUpRight size={14} className="opacity-70 ml-1" />
-              </a>
-            )}
-
-            {instagramLink !== '#' && (
-              <a
-                href={instagramLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary contact-btn"
-              >
-                <InstagramIcon size={18} />
-                <span>Instagram</span>
-                <ArrowUpRight size={14} className="opacity-70 ml-1" />
-              </a>
-            )}
-
-            <button
-              onClick={handleCopyEmail}
-              className="btn-secondary contact-btn cursor-pointer relative"
-              title="Copy email address"
+            <a
+              href={`mailto:${emailAddress}`}
+              className="btn-secondary contact-btn"
             >
-              {copied ? <Check size={18} className="text-emerald-500" /> : <Mail size={18} />}
-              <span>{copied ? 'Email Copied!' : 'Email Me'}</span>
-            </button>
+              <Mail size={18} />
+              <span>Email Me</span>
+            </a>
           </div>
 
           {/* Email & Contact Details Display */}
           <div className="contact-email-box">
             <span className="contact-email-label block">Direct Details:</span>
             <div className="flex flex-wrap items-center justify-center gap-2.5">
-              <code className="contact-email-code select-all">
+              <a href={`mailto:${emailAddress}`} className="contact-email-code select-all hover:border-[var(--border-strong)] transition-colors">
                 {emailAddress}
-              </code>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-email-code hover:border-[var(--border-strong)] transition-colors flex items-center gap-1.5"
-              >
-                <span>WhatsApp: {PERSONAL_INFO.phone}</span>
               </a>
-              <a
-                href={instagramLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-email-code hover:border-[var(--border-strong)] transition-colors flex items-center gap-1.5"
+              <button
+                onClick={handleCopyEmail}
+                className="contact-email-code cursor-pointer hover:border-[var(--border-strong)] transition-colors flex items-center gap-1.5"
+                title="Copy email address"
               >
-                <span>Instagram: @ragunath_4</span>
-              </a>
+                {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
+                <span>{copied ? 'Copied' : 'Copy'}</span>
+              </button>
             </div>
           </div>
         </div>
