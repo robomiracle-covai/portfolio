@@ -58,7 +58,7 @@ export const ROBOTS: Robot[] = [
   {
     id: "nexus-a1",
     name: "Nexus A1",
-    image: "/robots/nexus.png",
+    image: "/robots/nexus.webp",
     description: "Service humanoid robot with touchscreen, deployed at a hospital in Thiruvananthapuram.",
     role: "Software and on-site installation."
   },
@@ -71,22 +71,22 @@ export const ROBOTS: Robot[] = [
   {
     id: "nova-a1",
     name: "Nova A1",
-    image: "/robots/nova.png",
+    image: "/robots/nova.webp",
     description: "AI educational humanoid for schools and STEM labs, with face recognition and voice commands.",
     role: "Voice and AI interaction."
   },
   {
     id: "aurra",
     name: "Aurra",
-    image: "/robots/aurra.png",
+    image: "/robots/aurra.webp",
     description: "Humanoid robot for workplaces and events.",
     role: "Robot software."
   },
   {
     id: "nila-dine",
     name: "Nila and Dine Bot",
-    image: "/robots/nila.png",
-    secondaryImage: "/robots/dine.png",
+    image: "/robots/nila.webp",
+    secondaryImage: "/robots/dine.webp",
     description: "Reception and restaurant service robots."
   }
 ];
