@@ -881,6 +881,55 @@ a:focus-visible, button:focus-visible {
   margin-right: 0.25rem;
 }
 
+.robot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.85rem;
+}
+
+.robot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.robot-link:hover {
+  text-decoration: underline;
+}
+
+/* Company logo: white badge so the dark lettering stays readable in dark mode */
+.company-logo {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.company-logo:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.company-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .company-logo {
+    align-self: auto;
+  }
+}
+
 /* Projects: image beside text on wide screens */
 .project-layout {
   display: grid;

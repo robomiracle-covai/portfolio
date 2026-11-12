@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sparkles, ExternalLink } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
-import { GithubIcon } from './Icons';
+import { GithubIcon, LinkedinIcon } from './Icons';
 import { MediaImage } from './MediaImage';
 
 export const Projects: React.FC = () => {
@@ -49,17 +49,33 @@ export const Projects: React.FC = () => {
                     </div>
                   </div>
 
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-mono text-[var(--accent)] hover:underline inline-flex items-center gap-1.5"
-                    >
-                      <GithubIcon size={13} />
-                      <span>{project.githubLabel ?? 'Code'}</span>
-                      <ExternalLink size={12} />
-                    </a>
+                  {(project.githubUrl || project.postUrl) && (
+                    <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                      {project.postUrl && (
+                        <a
+                          href={project.postUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-mono text-[var(--accent)] hover:underline inline-flex items-center gap-1.5"
+                        >
+                          <LinkedinIcon size={13} />
+                          <span>{project.postLabel ?? 'Post'}</span>
+                          <ExternalLink size={12} />
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-mono text-[var(--accent)] hover:underline inline-flex items-center gap-1.5"
+                        >
+                          <GithubIcon size={13} />
+                          <span>{project.githubLabel ?? 'Code'}</span>
+                          <ExternalLink size={12} />
+                        </a>
+                      )}
+                    </div>
                   )}
                 </div>
               </div>

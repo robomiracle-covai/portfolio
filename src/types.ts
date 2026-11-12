@@ -8,6 +8,8 @@ export interface Project {
   context?: string;
   githubUrl?: string;
   githubLabel?: string;
+  postUrl?: string;
+  postLabel?: string;
 }
 
 export interface Robot {
@@ -17,6 +19,8 @@ export interface Robot {
   secondaryImage?: string;
   description: string;
   role?: string;
+  url?: string;
+  secondaryUrl?: string;
 }
 
 export interface BuildLogEntry {

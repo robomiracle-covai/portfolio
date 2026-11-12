@@ -3,6 +3,8 @@ import type { Project, BuildLogEntry, Robot, SocialLink } from '../types';
 export const GITHUB_USERNAME = "ragunath4";
 export const GITHUB_URL = `https://github.com/${GITHUB_USERNAME}`;
 export const RESUME_URL = "/resume.pdf";
+export const ROBOMIRACLE_URL = "https://www.robomiracle.com";
+const RBM_PRODUCT = `${ROBOMIRACLE_URL}/product-tag/robots/products`;
 
 export const PERSONAL_INFO = {
   name: "Ragunath Periyasamy",
@@ -59,6 +61,7 @@ export const ROBOTS: Robot[] = [
     id: "nexus-a1",
     name: "Nexus A1",
     image: "/robots/nexus.webp",
+    url: `${RBM_PRODUCT}/nexus.html`,
     description: "Service humanoid robot with touchscreen, deployed at a hospital in Thiruvananthapuram.",
     role: "Software and on-site installation."
   },
@@ -66,6 +69,7 @@ export const ROBOTS: Robot[] = [
     id: "nova-a1",
     name: "Nova A1",
     image: "/robots/nova.webp",
+    url: `${RBM_PRODUCT}/nova.html`,
     description: "AI educational humanoid for schools and STEM labs, with face recognition and voice commands.",
     role: "Voice and AI interaction."
   },
@@ -73,6 +77,7 @@ export const ROBOTS: Robot[] = [
     id: "aurra",
     name: "Aurra",
     image: "/robots/aurra.webp",
+    url: `${RBM_PRODUCT}/aurra.html`,
     description: "Humanoid robot for workplaces and events.",
     role: "Robot software."
   },
@@ -80,7 +85,9 @@ export const ROBOTS: Robot[] = [
     id: "nila-dine",
     name: "Nila and Dine Bot",
     image: "/robots/nila.webp",
+    url: `${RBM_PRODUCT}/nila.html`,
     secondaryImage: "/robots/dine.webp",
+    secondaryUrl: `${RBM_PRODUCT}/dine.html`,
     description: "Reception and restaurant service robots."
   }
 ];
@@ -97,7 +104,9 @@ export const PROJECTS: Project[] = [
     technologies: ["Raspberry Pi", "OAK-D", "Servo Motors", "Face Recognition", "3D Printing"],
     context: "College final-year project · Team of 6",
     githubUrl: `${GITHUB_URL}?tab=repositories&q=MisterMini`,
-    githubLabel: "Mechanical parts"
+    githubLabel: "Mechanical parts",
+    postUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7264648260248625155/",
+    postLabel: "LinkedIn post"
   },
   {
     id: "rag-chatbot",
