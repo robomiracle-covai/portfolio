@@ -63,12 +63,6 @@ export const ROBOTS: Robot[] = [
     role: "Software and on-site installation."
   },
   {
-    id: "medi-buddy",
-    name: "Medi Buddy",
-    description: "Autonomous hospital logistics robot moving sterile supplies to operating theatres at Aravind Eye Care.",
-    role: "Navigation and UI software."
-  },
-  {
     id: "nova-a1",
     name: "Nova A1",
     image: "/robots/nova.webp",
