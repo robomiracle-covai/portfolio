@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
           <div className="md:col-span-4 flex justify-center md:justify-end items-center">
             <div className="hero-avatar-wrap">
               <img
-                src="/RAGU.png"
+                src="/profile.webp"
                 alt="Ragunath Periyasamy"
                 className="hero-avatar-img"
                 width={260}
